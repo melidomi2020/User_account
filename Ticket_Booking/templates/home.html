@@ -1,0 +1,15 @@
+{%extends 'main.html' %}
+{% block title%} Home{% endblock%}
+{% block content %}
+{%if user.is_authenticated%}
+ Hi {{user.id}}
+ <p> <a href="{% url 'logout' %} ">log Out</a></p>
+ {%else%}
+
+ <p>you are not log in</p>
+ <a href="{% url 'login'%}"> log in </a>
+
+ {%endif%}
+
+
+{% endblock %}
